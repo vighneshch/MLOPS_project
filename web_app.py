@@ -4,7 +4,7 @@ import mlflow
 import pandas as pd
 import requests
 import os
-os.environ['GOOGLE_APPLICATION_CREDENTIALS']="D:\\DataScience\\Term 2\\7.MLOPS\\MLOPS final assignment\\MLOPS_project\\master-shore-411113-41df45dfb65e.json"
+os.environ['GOOGLE_APPLICATION_CREDENTIALS']="master-shore-411113-41df45dfb65e.json"
 
 #setting the tracking URI
 mlflow.set_tracking_uri("http://34.100.213.14:5000/")
@@ -15,7 +15,7 @@ version = "1"
 model = mlflow.sklearn.load_model(model_uri = f"models:/{model_name}/{version}")
 
 #Loading the pickled dataframe
-df = pd.read_pickle('./moviemeta.pkl')
+df = pd.read_pickle('moviemeta.pkl')
 
 #Loading the movies into a list
 movie_list = list(df['title'].unique())
