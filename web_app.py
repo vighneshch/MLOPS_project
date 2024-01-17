@@ -50,7 +50,7 @@ def tmdb_poster(movies,df):
 #Streamlit page design and prediction
 st.set_page_config(layout='wide',page_title='Movie Recommender')
 st.title('Movie Recommender System')
-uid = st.sidebar.number_input("Enter your user ID")
+uid = st.sidebar.number_input("Enter your user ID",format="%d",step=1,value=0)
 if st.sidebar.button('Recommend 🚀'):
     with st.spinner("Fetching...."):
         movies = recomd_engine(uid,movie_list)
